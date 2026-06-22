@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view>
+  <property name='pageManagedBean' value='ShowDebugDefaultviewView' />
+  <property name='preferencesBean' value='ShowDebug' />
+  <design-time-attribute name='portlet' value='ShowDebug' />
+  <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+  </control>
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='defaultForm' />
+    <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertyGroup'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <property name='id' value='propertyGroup' />
+      <property name='label' value='Show Debug Information' />
+      <facet name='label'>
+        <control component-type='com.webmethods.caf.faces.command.async.Button' renderer-type='com.webmethods.caf.faces.command.async.Button'>
+          <property name='action' value='#{ShowDebugDefaultviewView.showDebug.storePreferences}' />
+          <property name='id' value='button' />
+          <property name='onclick' value=' ' />
+          <property name='value' value='Save' />
+        </control>
+      </facet>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='propertyLine' />
+        <control component-type='javax.faces.HtmlSelectOneMenu' renderer-type='javax.faces.Menu'>
+          <property name='disabledClass' value='disabled' />
+          <property name='enabledClass' value='enabled' />
+          <property name='id' value='htmlSelectOneMenu' />
+          <property name='value' value='#{ShowDebugDefaultviewView.showDebug.showDebug}' />
+          <property name='width' value='input20' />
+          <control component-type='javax.faces.SelectItem' renderer-type=''>
+            <property name='id' value='trueSelectItem' />
+            <property name='itemLabel' value='True' />
+            <property name='itemValue' value='true' />
+          </control>
+          <control component-type='javax.faces.SelectItem' renderer-type=''>
+            <property name='id' value='falseSelectItem' />
+            <property name='itemLabel' value='False' />
+            <property name='itemValue' value='false' />
+          </control>
+        </control>
+      </control>
+    </control>
+  </control>
+</view>

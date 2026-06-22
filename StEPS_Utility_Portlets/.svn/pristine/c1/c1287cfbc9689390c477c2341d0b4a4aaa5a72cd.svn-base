@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view>
+  <property name='pageManagedBean' value='NoContextMenuDefaultviewView' />
+  <property name='preferencesBean' value='NoContextMenu' />
+  <design-time-attribute name='portlet' value='NoContextMenu' />
+  <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+  </control>
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='noContextForm' />
+    <control component-type='com.webmethods.caf.faces.output.Script' renderer-type='com.webmethods.caf.faces.output.Script'>
+      <property name='id' value='noContextScript' />
+      <property name='rendered' value='#{facesContext.externalContext.userPrincipal.name!=&apos;SysAdmin&apos;}' />
+      <property name='value' value='document.oncontextmenu = new Function(&quot;return false&quot;);' />
+    </control>
+    <control component-type='com.webmethods.caf.faces.output.Script' renderer-type='com.webmethods.caf.faces.output.Script'>
+      <property name='id' value='disableBackButtonScript' />
+      <property name='rendered' value='#{facesContext.externalContext.userPrincipal.name!=&apos;SysAdmin&apos;}' />
+      <property name='value' value='window.history.forward();  ' />
+    </control>
+  </control>
+</view>

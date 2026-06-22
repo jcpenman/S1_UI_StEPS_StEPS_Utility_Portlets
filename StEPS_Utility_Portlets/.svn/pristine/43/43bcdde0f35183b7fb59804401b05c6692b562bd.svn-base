@@ -1,0 +1,5 @@
+#Mon Feb 21 10:59:52 GMT 2011
+eclipse.preferences.version=1
+encoding//WebContent/SharedMessaging/default.view=UTF-8
+encoding//WebContent/TestPortletOne/default.view=UTF-8
+instance/org.eclipse.core.net/org.eclipse.core.net.hasMigrated=true

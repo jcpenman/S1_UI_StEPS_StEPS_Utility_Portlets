@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:tns="http://WMSTEPSIS/STEPS_UI_Common/WSD/SharedMessaging/createErrorTag_WSD" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="createErrorTag_WSD" targetNamespace="http://WMSTEPSIS/STEPS_UI_Common/WSD/SharedMessaging/createErrorTag_WSD">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://WMSTEPSIS/STEPS_UI_Common/WSD/SharedMessaging/createErrorTag_WSD" targetNamespace="http://WMSTEPSIS/STEPS_UI_Common/WSD/SharedMessaging/createErrorTag_WSD">
+          <xsd:complexType name="createErrorTag">
+            <xsd:sequence>
+              <xsd:element name="title" nillable="true" type="xsd:string"/>
+              <xsd:element name="style" nillable="true" type="xsd:string"/>
+              <xsd:element name="message" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="createErrorTagResponse">
+            <xsd:sequence>
+              <xsd:element name="sharedMessage" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        			<xsd:element name="createErrorTag" type="tns:createErrorTag"/>
+			<xsd:element name="createErrorTagResponse" type="tns:createErrorTagResponse"/>
+	</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="createErrorTag_WSD_PortType_createErrorTag">
+    <wsdl:part name="parameters" element="tns:createErrorTag">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createErrorTag_WSD_PortType_createErrorTagResponse">
+    <wsdl:part name="parameters" element="tns:createErrorTagResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="createErrorTag_WSD_PortType">
+    <wsdl:operation name="createErrorTag">
+      <wsdl:input message="tns:createErrorTag_WSD_PortType_createErrorTag">
+    </wsdl:input>
+      <wsdl:output message="tns:createErrorTag_WSD_PortType_createErrorTagResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="STEPS_UI_Common_WSD_SharedMessaging_createErrorTag_WSD_Binder" type="tns:createErrorTag_WSD_PortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="createErrorTag">
+      <soap:operation soapAction="STEPS_UI_Common_WSD_SharedMessaging_createErrorTag_WSD_Binder_createErrorTag" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="createErrorTag_WSD">
+    <wsdl:port name="STEPS_UI_Common_WSD_SharedMessaging_createErrorTag_WSD_Port" binding="tns:STEPS_UI_Common_WSD_SharedMessaging_createErrorTag_WSD_Binder">
+      <soap:address location="http://WMSTEPSIS:5555/ws/STEPS_UI_Common.WSD.SharedMessaging:createErrorTag_WSD"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

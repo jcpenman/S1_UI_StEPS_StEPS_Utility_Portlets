@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13190189875080" configfile="/STEPS_UI_Utilities/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="BooleanSetter/*" x="122" y="178" id="pf13256834419660" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf13256834419661" path="BooleanSetter/*"/>
+  <nodes xsi:type="pageflow:PFPage" name="BooleanSetter/default.view" x="338" y="178" id="pf13256834419662" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf13256834419661" path="/BooleanSetter/default.view"/>
+  <nodes xsi:type="pageflow:PFPage" name="ShowDebug/*" x="122" y="562" id="pf13256834419663" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf13256834419664" path="ShowDebug/*"/>
+  <nodes xsi:type="pageflow:PFPage" name="ShowDebug/default.view" x="338" y="562" id="pf13256834419665" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf13256834419664" path="/ShowDebug/default.view"/>
+  <nodes xsi:type="pageflow:PFPage" name="LogoutCountDownTimerLimit/*" x="122" y="946" id="pf13256834419666" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf13256834419667" path="LogoutCountDownTimerLimit/*"/>
+  <nodes xsi:type="pageflow:PFPage" name="LogoutCountDownTimerLimit/default.view" x="338" y="946" id="pf13256834419668" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf13256834419667" path="/LogoutCountDownTimerLimit/default.view"/>
+  <nodes xsi:type="pageflow:PFPage" name="NoContextMenu/*" x="122" y="1330" id="pf13256834419669" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf132568344196610" path="NoContextMenu/*"/>
+  <nodes xsi:type="pageflow:PFPage" name="NoContextMenu/default.view" x="338" y="1330" id="pf132568344196611" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf132568344196610" path="/NoContextMenu/default.view"/>
+  <links id="pf13256834419661" target="pf13256834419662" source="pf13256834419660" outcome="default"/>
+  <links id="pf13256834419664" target="pf13256834419665" source="pf13256834419663" outcome="default"/>
+  <links id="pf13256834419667" target="pf13256834419668" source="pf13256834419666" outcome="default"/>
+  <links id="pf132568344196610" target="pf132568344196611" source="pf13256834419669" outcome="default"/>
+</pageflow:Pageflow>

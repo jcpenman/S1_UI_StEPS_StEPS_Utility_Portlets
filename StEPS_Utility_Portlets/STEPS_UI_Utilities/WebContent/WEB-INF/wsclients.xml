@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsclients>
+<webservice authenticationMethod="1" isConnectionURL="http://192.168.186.204:5555/ws/STEPS_UI_Utilities.WSD:runUtilityFeeStatusReport2012All_WSD?WSDL" isService="STEPS_UI_Utilities.WSD:runUtilityFeeStatusReport2012All_WSD" name="runUtilityFeeStatusReport2012All_WSD" package="com.webmethods.caf.wsclient.steps_ui_utilities.wsd.runutilityfeestatusreport2012all_wsd" password="{AES}Y5IgMqjfvkgbg7p5VUZztw==" requiresAuth="true" soapLibrary="glue" useNamespaceForPackage="false" username="Administrator" wsdlFile="src/com/webmethods/caf/wsclient/steps_ui_utilities/wsd/runutilityfeestatusreport2012all_wsd/runUtilityFeeStatusReport2012All_WSD.wsdl" wsdlURL="http://192.168.186.204:5555/ws/STEPS_UI_Utilities.WSD:runUtilityFeeStatusReport2012All_WSD?WSDL">
+<wsproxy className="com.webmethods.caf.wsclient.steps_ui_utilities.wsd.runutilityfeestatusreport2012all_wsd.IrunUtilityFeeStatusReport2012All_WSD_PortType">
+<wsclient managedBean="RunUtilityFeeStatusReport2012All" operation="runUtilityFeeStatusReport2012All"/>
+</wsproxy>
+<generatedfile>com\webmethods\caf\wsclient\steps_ui_utilities\wsd\runutilityfeestatusreport2012all_wsd\IrunUtilityFeeStatusReport2012All_WSD_PortType.java</generatedfile>
+<generatedfile>com\webmethods\caf\wsclient\steps_ui_utilities\wsd\runutilityfeestatusreport2012all_wsd\runUtilityFeeStatusReport2012All_WSDHelper.java</generatedfile>
+<generatedfile>com\webmethods\caf\wsclient\steps_ui_utilities\wsd\runutilityfeestatusreport2012all_wsd\runUtilityFeeStatusReport2012All.java</generatedfile>
+<generatedfile>com\webmethods\caf\wsclient\steps_ui_utilities\wsd\runutilityfeestatusreport2012all_wsd\runUtilityFeeStatusReport2012All_WSD.map</generatedfile>
+</webservice>
+<webservice authenticationMethod="1" isConnectionURL="http://192.168.186.204:5555/ws/STEPS_UI_Utilities.WSD:runUtilityBatchRecalc_WSD?WSDL" isService="STEPS_UI_Utilities.WSD:runUtilityBatchRecalc_WSD" name="runUtilityBatchRecalc_WSD" package="com.webmethods.caf.wsclient.steps_ui_utilities.wsd.runutilitybatchrecalc_wsd" password="{AES}Y5IgMqjfvkgbg7p5VUZztw==" requiresAuth="true" soapLibrary="glue" useNamespaceForPackage="false" username="Administrator" wsdlFile="src/com/webmethods/caf/wsclient/steps_ui_utilities/wsd/runutilitybatchrecalc_wsd/runUtilityBatchRecalc_WSD.wsdl" wsdlURL="http://192.168.186.204:5555/ws/STEPS_UI_Utilities.WSD:runUtilityBatchRecalc_WSD?WSDL">
+<wsproxy className="com.webmethods.caf.wsclient.steps_ui_utilities.wsd.runutilitybatchrecalc_wsd.IrunUtilityBatchRecalc_WSD_PortType">
+<wsclient managedBean="RunUtilityBatchRecalc" operation="runUtilityBatchRecalc"/>
+</wsproxy>
+<generatedfile>com\webmethods\caf\wsclient\steps_ui_utilities\wsd\runutilitybatchrecalc_wsd\IrunUtilityBatchRecalc_WSD_PortType.java</generatedfile>
+<generatedfile>com\webmethods\caf\wsclient\steps_ui_utilities\wsd\runutilitybatchrecalc_wsd\runUtilityBatchRecalc_WSDHelper.java</generatedfile>
+<generatedfile>com\webmethods\caf\wsclient\steps_ui_utilities\wsd\runutilitybatchrecalc_wsd\runUtilityBatchRecalc.java</generatedfile>
+<generatedfile>com\webmethods\caf\wsclient\steps_ui_utilities\wsd\runutilitybatchrecalc_wsd\runUtilityBatchRecalc_WSD.map</generatedfile>
+</webservice>
+<webservice authenticationMethod="1" isConnectionURL="http://192.168.186.93:5555/ws/STEPS_UI_Utilities.WSD:runDSAReminderLetters_WSD?WSDL" isService="STEPS_UI_Utilities.WSD:runDSAReminderLetters_WSD" name="runDSAReminderLetters_WSD" package="com.webmethods.caf.wsclient.steps_ui_utilities.wsd.rundsareminderletters_wsd" password="{AES}Y5IgMqjfvkgbg7p5VUZztw==" requiresAuth="true" soapLibrary="glue" useNamespaceForPackage="false" username="Administrator" wsdlFile="src/com/webmethods/caf/wsclient/steps_ui_utilities/wsd/rundsareminderletters_wsd/runDSAReminderLetters_WSD.wsdl" wsdlURL="http://192.168.186.93:5555/ws/STEPS_UI_Utilities.WSD:runDSAReminderLetters_WSD?WSDL">
+<wsproxy className="com.webmethods.caf.wsclient.steps_ui_utilities.wsd.rundsareminderletters_wsd.IrunDSAReminderLetters_WSD_PortType">
+<wsclient managedBean="RunDSAReminderLetters" operation="runDSAReminderLetters"/>
+</wsproxy>
+<generatedfile>com\webmethods\caf\wsclient\steps_ui_utilities\wsd\rundsareminderletters_wsd\IrunDSAReminderLetters_WSD_PortType.java</generatedfile>
+<generatedfile>com\webmethods\caf\wsclient\steps_ui_utilities\wsd\rundsareminderletters_wsd\runDSAReminderLetters_WSDHelper.java</generatedfile>
+<generatedfile>com\webmethods\caf\wsclient\steps_ui_utilities\wsd\rundsareminderletters_wsd\runDSAReminderLetters.java</generatedfile>
+<generatedfile>com\webmethods\caf\wsclient\steps_ui_utilities\wsd\rundsareminderletters_wsd\runDSAReminderLetters_WSD.map</generatedfile>
+</webservice>
+<webservice isConnectionURL="http://192.168.186.57:5555" isService="STEPS_UI_Common.WSD.SharedMessaging:createErrorTag_WSD" name="createErrorTag_WSD" package="com.webmethods.caf.is.wsclient.steps_ui_common.wsd.sharedmessaging.createerrortag_wsd" password="{DES}vrFIelCdkow=" requiresAuth="true" soapLibrary="glue" useNamespaceForPackage="false" username="Administrator" wsdlFile="src/com/webmethods/caf/is/wsclient/steps_ui_common/wsd/sharedmessaging/createerrortag_wsd/createErrorTag_WSD.wsdl" wsdlURL="http://WMSTEPSIS:5555/ws/STEPS_UI_Common.WSD.SharedMessaging:createErrorTag_WSD?WSDL">
+<wsproxy className="com.webmethods.caf.is.wsclient.steps_ui_common.wsd.sharedmessaging.createerrortag_wsd.IcreateErrorTag_WSD_PortType">
+<wsclient managedBean="CreateErrorTag" operation="createErrorTag"/>
+</wsproxy>
+</webservice>
+<webservice authenticationMethod="1" isConnectionURL="http://192.168.186.204:5555/ws/STEPS_UI_Utilities.WSD:runUtilityFeeStatusReport2012Institution_WSD?WSDL" isService="STEPS_UI_Utilities.WSD:runUtilityFeeStatusReport2012Institution_WSD" name="runUtilityFeeStatusReport2012Institution_WSD" package="com.webmethods.caf.wsclient.steps_ui_utilities.wsd.runutilityfeestatusreport2012institution_wsd" password="{AES}Y5IgMqjfvkgbg7p5VUZztw==" requiresAuth="true" soapLibrary="glue" useNamespaceForPackage="false" username="Administrator" wsdlFile="src/com/webmethods/caf/wsclient/steps_ui_utilities/wsd/runutilityfeestatusreport2012institution_wsd/runUtilityFeeStatusReport2012Institution_WSD.wsdl" wsdlURL="http://192.168.186.204:5555/ws/STEPS_UI_Utilities.WSD:runUtilityFeeStatusReport2012Institution_WSD?WSDL">
+<wsproxy className="com.webmethods.caf.wsclient.steps_ui_utilities.wsd.runutilityfeestatusreport2012institution_wsd.IrunUtilityFeeStatusReport2012Institution_WSD_PortType">
+<wsclient managedBean="RunUtilityFeeStatusReport2012Institution" operation="runUtilityFeeStatusReport2012Institution"/>
+</wsproxy>
+<generatedfile>com\webmethods\caf\wsclient\steps_ui_utilities\wsd\runutilityfeestatusreport2012institution_wsd\IrunUtilityFeeStatusReport2012Institution_WSD_PortType.java</generatedfile>
+<generatedfile>com\webmethods\caf\wsclient\steps_ui_utilities\wsd\runutilityfeestatusreport2012institution_wsd\runUtilityFeeStatusReport2012Institution_WSDHelper.java</generatedfile>
+<generatedfile>com\webmethods\caf\wsclient\steps_ui_utilities\wsd\runutilityfeestatusreport2012institution_wsd\runUtilityFeeStatusReport2012Institution.java</generatedfile>
+<generatedfile>com\webmethods\caf\wsclient\steps_ui_utilities\wsd\runutilityfeestatusreport2012institution_wsd\runUtilityFeeStatusReport2012Institution_WSD.map</generatedfile>
+</webservice>
+</wsclients>

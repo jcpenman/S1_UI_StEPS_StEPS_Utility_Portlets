@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view>
+  <property name='pageManagedBean' value='AllocateTeamDefaultviewView' />
+  <property name='preferencesBean' value='AllocateTeam' />
+  <design-time-attribute name='portlet' value='AllocateTeam' />
+  <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+  </control>
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='allocateTeamForm' />
+    <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <property name='id' value='sharedmessagingBlockPanel' />
+      <control component-type='com.webmethods.caf.faces.command.async.Hidden' renderer-type='com.webmethods.caf.faces.command.async.Hidden'>
+        <property name='action' value='#{AllocateTeamDefaultviewView.createClientSideError}' />
+        <property name='id' value='clientSideMessageHiddenCmd' />
+        <property name='refresh' value='allocateTeamForm:clientSideErrorBlockPanel' />
+      </control>
+      <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+        <property name='id' value='clientSideErrorBlockPanel' />
+        <control component-type='javax.faces.HtmlInputHidden' renderer-type='javax.faces.Hidden'>
+          <property name='id' value='hiddenClientSideErrorTitle' />
+          <property name='value' value='#{AllocateTeamDefaultviewView.clientSideError.title}' />
+        </control>
+        <control component-type='javax.faces.HtmlInputHidden' renderer-type='javax.faces.Hidden'>
+          <property name='id' value='hiddenClientSideErrorStyle' />
+          <property name='value' value='#{AllocateTeamDefaultviewView.clientSideError.style}' />
+        </control>
+        <control component-type='javax.faces.HtmlInputHidden' renderer-type='javax.faces.Hidden'>
+          <property name='id' value='hiddenClientSideErrorMessage' />
+          <property name='value' value='#{AllocateTeamDefaultviewView.clientSideError.message}' />
+        </control>
+        <control component-type='com.webmethods.caf.faces.output.Script' renderer-type='com.webmethods.caf.faces.output.Script'>
+          <property name='id' value='createErrorTagScript' />
+          <property name='value' value='#{AllocateTeamDefaultviewView.createErrorTag.result.sharedMessage}' />
+        </control>
+      </control>
+      <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+        <property name='id' value='errorBlockPanel' />
+        <control component-type='com.webmethods.caf.faces.output.Script' renderer-type='com.webmethods.caf.faces.output.Script'>
+          <property name='id' value='getTeam_AllocateErrorScript' />
+          <property name='rendered' value='#{AllocateTeamDefaultviewView.getTeam_Allocate.result.error_boolean==&apos;true&apos;}' />
+          <property name='value' value='#{AllocateTeamDefaultviewView.getTeam_Allocate.result.error_text}' />
+        </control>
+        <control component-type='com.webmethods.caf.faces.output.Script' renderer-type='com.webmethods.caf.faces.output.Script'>
+          <property name='id' value='setTeamErrorScript' />
+          <property name='rendered' value='#{AllocateTeamDefaultviewView.setTeam.result.error_boolean==&apos;true&apos;}' />
+          <property name='value' value='#{AllocateTeamDefaultviewView.setTeam.result.error_text}' />
+        </control>
+        <control component-type='com.webmethods.caf.faces.output.Script' renderer-type='com.webmethods.caf.faces.output.Script'>
+          <property name='id' value='getTeamsErrorScript' />
+          <property name='rendered' value='#{AllocateTeamDefaultviewView.getTeams.result.error_boolean==&apos;true&apos;}' />
+          <property name='value' value='#{AllocateTeamDefaultviewView.getTeams.result.error_text}' />
+        </control>
+      </control>
+    </control>
+    <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertyGroup'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <property name='id' value='propertyGroup' />
+      <property name='label' value='Team Membership' />
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='propertyLine' />
+        <property name='label' value='Username' />
+        <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+          <property name='value' value='#{AllocateTeamDefaultviewView.getTeam_Allocate.parameters.getTeam.employee_in}' />
+          <property name='width' value='input20' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='propertyLine1' />
+        <control component-type='com.webmethods.caf.faces.command.async.Button' renderer-type='com.webmethods.caf.faces.command.async.Button'>
+          <property name='action' value='#{AllocateTeamDefaultviewView.searchUsername}' />
+          <property name='disabled' value='#{!securityRoles[&quot;STEPSSupportUsersRole&quot;]}' />
+          <property name='id' value='searchUsernameButton' />
+          <property name='onblur' value=' ' />
+          <property name='onclick' value=' ' />
+          <property name='ondblclick' value=' ' />
+          <property name='onfocus' value=' ' />
+          <property name='onkeydown' value=' ' />
+          <property name='onkeypress' value=' ' />
+          <property name='onkeyup' value=' ' />
+          <property name='onmousedown' value=' ' />
+          <property name='onmousemove' value=' ' />
+          <property name='onmouseout' value=' ' />
+          <property name='onmouseover' value=' ' />
+          <property name='onmouseup' value=' ' />
+          <property name='value' value='Search' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertySubGroup'>
+        <design-time-attribute name='rolledUp' value='true' />
+        <property name='id' value='searchedUserSubGroup' />
+        <property name='label' value='Searched Username' />
+        <property name='rendered' value='#{AllocateTeamDefaultviewView.isSearched==&apos;true&apos;}' />
+        <facet name='label'>
+          <control component-type='com.webmethods.caf.faces.output.Script' renderer-type='com.webmethods.caf.faces.output.Script'>
+            <property name='id' value='showModalScript' />
+            <property name='rendered' value='#{AllocateTeamDefaultviewView.showConfirmationModal}' />
+            <property name='value' value='if(CAF.model(&quot;#{activePageBean.clientIds[&apos;confirmChangeTeamDialog&apos;]}&quot;)!=null) {&#13;&#10;&#9;CAF.model(&quot;#{activePageBean.clientIds[&apos;confirmChangeTeamDialog&apos;]}&quot;).show();&#13;&#10;}' />
+          </control>
+        </facet>
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='id' value='propertyLine5' />
+          <property name='label' value='Username' />
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='value' value='#{AllocateTeamDefaultviewView.setTeam.parameters.setTeam.username_in}' />
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='id' value='propertyLine2' />
+          <property name='label' value='Current Team' />
+          <control component-type='javax.faces.HtmlSelectOneMenu' renderer-type='javax.faces.Menu'>
+            <property name='disabled' value='true' />
+            <property name='disabledClass' value='disabled' />
+            <property name='enabledClass' value='enabled' />
+            <property name='value' value='#{AllocateTeamDefaultviewView.getTeam_Allocate.result.team_out}' />
+            <property name='width' value='input10' />
+            <control component-type='javax.faces.SelectItems' renderer-type=''>
+              <property name='value' value='#{AllocateTeamDefaultviewView.teamsProvider}' />
+            </control>
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='id' value='propertyLine3' />
+          <property name='label' value='Change To' />
+          <control component-type='javax.faces.HtmlSelectOneMenu' renderer-type='javax.faces.Menu'>
+            <property name='disabledClass' value='disabled' />
+            <property name='enabledClass' value='enabled' />
+            <property name='id' value='htmlInputText' />
+            <property name='value' value='#{AllocateTeamDefaultviewView.setTeam.parameters.setTeam.team_in}' />
+            <property name='width' value='input10' />
+            <control component-type='javax.faces.SelectItems' renderer-type=''>
+              <property name='value' value='#{AllocateTeamDefaultviewView.teamsProvider}' />
+            </control>
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='id' value='propertyLine4' />
+          <control component-type='com.webmethods.caf.faces.command.async.Button' renderer-type='com.webmethods.caf.faces.command.async.Button'>
+            <property name='action' value='#{AllocateTeamDefaultviewView.requestUpdate}' />
+            <property name='id' value='updateButton' />
+            <property name='value' value='Update' />
+          </control>
+        </control>
+      </control>
+    </control>
+    <control component-type='com.webmethods.caf.faces.panel.ModalDialog' renderer-type='com.webmethods.caf.faces.panel.ModalDialog'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <property name='id' value='confirmChangeTeamDialog' />
+      <facet name='title'>
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <property name='id' value='htmlOutputText' />
+          <property name='value' value='Confirm Update' />
+        </control>
+      </facet>
+      <facet name='submit'>
+        <control component-type='com.webmethods.caf.faces.command.async.Button' renderer-type='com.webmethods.caf.faces.command.async.Button'>
+          <property name='action' value='#{AllocateTeamDefaultviewView.confirmUpdate}' />
+          <property name='id' value='button1' />
+          <property name='value' value='Confirm' />
+        </control>
+      </facet>
+      <facet name='cancel'>
+        <control component-type='com.webmethods.caf.faces.command.async.Button' renderer-type='com.webmethods.caf.faces.command.async.Button'>
+          <property name='action' value='#{AllocateTeamDefaultviewView.cancelUpdate}' />
+          <property name='id' value='button2' />
+          <property name='value' value='Cancel' />
+        </control>
+      </facet>
+      <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+        <property name='id' value='confirmMessageBlockPanel' />
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <property name='id' value='confirmText' />
+          <property name='value' value='Are you sure you want to change user #{AllocateTeamDefaultviewView.setTeam.parameters.setTeam.username_in} to team #{AllocateTeamDefaultviewView.setTeam.parameters.setTeam.team_in}?' />
+        </control>
+      </control>
+    </control>
+  </control>
+</view>

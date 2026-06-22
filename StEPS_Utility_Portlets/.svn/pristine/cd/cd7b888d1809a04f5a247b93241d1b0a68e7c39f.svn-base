@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wm-portlet-app version="1.0">
+	<wm-portlet>
+		<portlet-name>RoleMembership</portlet-name>
+	</wm-portlet>
+	<wm-portlet>
+		<portlet-name>PreviousCases</portlet-name>
+	</wm-portlet>
+	<wm-portlet>
+		<portlet-name>AllocateTeam</portlet-name>
+	</wm-portlet>
+	<wm-portlet>
+		<portlet-name>ShowTeam</portlet-name>
+	</wm-portlet>
+	<wm-portlet>
+		<portlet-name>AllEmployees</portlet-name>
+	</wm-portlet></wm-portlet-app>
+

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view>
+  <property name='pageManagedBean' value='LogoutCountDownTimerLimitDefaultviewView' />
+  <property name='preferencesBean' value='LogoutCountDownTimerLimit' />
+  <design-time-attribute name='portlet' value='LogoutCountDownTimerLimit' />
+  <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+  </control>
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='logoutCountDownTimerForm' />
+    <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertyGroup'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <property name='id' value='propertyGroup' />
+      <property name='label' value='Timer Limit' />
+      <facet name='label'>
+        <control component-type='com.webmethods.caf.faces.command.async.Button' renderer-type='com.webmethods.caf.faces.command.async.Button'>
+          <property name='action' value='#{LogoutCountDownTimerLimitDefaultviewView.update}' />
+          <property name='id' value='button' />
+          <property name='onclick' value=' ' />
+          <property name='value' value='Update' />
+        </control>
+      </facet>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='propertyLine' />
+        <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+          <validator validator-id='com.webmethods.caf.faces.validator.RegExp'>
+            <property name='customErrorMsg' value='The time must be in whole minutes' />
+            <property name='pattern' value='^\d+$' />
+            <property name='showCAFErrorMsg' value='false' />
+          </validator>
+          <property name='id' value='htmlInputText' />
+          <property name='required' value='true' />
+          <property name='value' value='#{LogoutCountDownTimerLimitDefaultviewView.inactivityTime}' />
+          <property name='width' value='input6' />
+        </control>
+      </control>
+    </control>
+  </control>
+</view>

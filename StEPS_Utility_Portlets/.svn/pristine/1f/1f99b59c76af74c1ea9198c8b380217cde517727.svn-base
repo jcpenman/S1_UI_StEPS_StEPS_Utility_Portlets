@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view>
+  <property name='pageManagedBean' value='UtilityDSARemindersDefaultviewView' />
+  <property name='preferencesBean' value='UtilityDSAReminders' />
+  <design-time-attribute name='portlet' value='UtilityDSAReminders' />
+  <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+  </control>
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='defaultForm' />
+    <control component-type='com.webmethods.caf.faces.output.FormattedText' renderer-type='com.webmethods.caf.faces.output.FormattedText'>
+      <property name='id' value='formattedText' />
+      <property name='value' value='&#13;&#10;&#13;&#10;&#13;&#10;' />
+    </control>
+    <control component-type='com.webmethods.caf.faces.command.async.Button' renderer-type='com.webmethods.caf.faces.command.async.Button'>
+      <property name='action' value='#{UtilityDSARemindersDefaultviewView.buttonDSAReminders_action}' />
+      <property name='id' value='buttonDSAReminders' />
+      <property name='onclick' value='alert(&apos;DSA Reminder Letters job started ...&apos;);' />
+      <property name='value' value='DSA Reminder Letters' />
+    </control>
+  </control>
+</view>

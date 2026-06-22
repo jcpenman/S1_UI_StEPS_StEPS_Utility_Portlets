@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view>
+  <property name='pageManagedBean' value='UtilityFeeStatusReport2012AllDefaultviewView' />
+  <property name='preferencesBean' value='UtilityFeeStatusReport2012All' />
+  <design-time-attribute name='portlet' value='UtilityFeeStatusReport2012All' />
+  <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+  </control>
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='defaultForm' />
+    <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+      <property name='id' value='blockPanel' />
+      <control component-type='com.webmethods.caf.faces.output.FormattedText' renderer-type='com.webmethods.caf.faces.output.FormattedText'>
+        <property name='id' value='formattedText' />
+        <property name='value' value='&#13;&#10;&#13;&#10;&#13;&#10;' />
+      </control>
+    </control>
+    <control component-type='com.webmethods.caf.faces.command.async.Button' renderer-type='com.webmethods.caf.faces.command.async.Button'>
+      <property name='action' value='#{UtilityFeeStatusReport2012AllDefaultviewView.buttonFeeStatusReport2012All_action}' />
+      <property name='id' value='buttonFeeStatusReport2012All' />
+      <property name='onclick' value='alert(&apos;Fee Status Report job started ...&apos;);' />
+      <property name='value' value='Fee Status Report - All' />
+    </control>
+  </control>
+</view>

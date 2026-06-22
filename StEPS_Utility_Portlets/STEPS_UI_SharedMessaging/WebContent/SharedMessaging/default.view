@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view>
+  <property name='pageManagedBean' value='SharedMessagingDefaultviewView' />
+  <property name='preferencesBean' value='SharedMessaging' />
+  <design-time-attribute name='portlet' value='SharedMessaging' />
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='messagingForm' />
+    <property name='onclick' value=' ' />
+    <property name='ondblclick' value=' ' />
+    <property name='onkeydown' value=' ' />
+    <property name='onkeypress' value=' ' />
+    <property name='onkeyup' value=' ' />
+    <property name='onmousedown' value=' ' />
+    <property name='onmousemove' value=' ' />
+    <property name='onmouseout' value=' ' />
+    <property name='onmouseover' value=' ' />
+    <property name='onmouseup' value=' ' />
+    <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+      <property name='id' value='sharedMessagingRefreshPanel' />
+      <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+        <property name='id' value='blockPanel2' />
+        <property name='style' value='left: -9999px; width: 760px; display: none; position: absolute; z-index: 1112;' />
+        <control component-type='com.webmethods.caf.faces.panel.ModalDialog' renderer-type='com.webmethods.caf.faces.panel.ModalDialog'>
+          <property name='id' value='sharedMessagingModalDialog' />
+          <property name='style' value='background-color: #FFFFFF;&#13;&#10;position: relative;&#13;&#10;z-index: 9999;&#13;&#10;box-shadow: 10px 10px 5px #888888;&#13;&#10;border: 1px solid gray;&#13;&#10;' />
+          <facet name='title'>
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+              <property name='id' value='messageType' />
+              <property name='style' value='font-size: 20px;&#13;&#10;font-weight: bold;&#13;&#10;' />
+              <property name='value' value='messageType' />
+            </control>
+          </facet>
+          <facet name='submit'>
+            <control component-type='com.webmethods.caf.faces.output.HtmlButton' renderer-type='javax.faces.Button'>
+              <property name='id' value='nextMessageButton' />
+              <property name='label' value='Next Message' />
+              <property name='onblur' value=' ' />
+              <property name='onclick' value='nextError();' />
+              <property name='ondblclick' value=' ' />
+              <property name='onfocus' value=' ' />
+              <property name='onkeydown' value=' ' />
+              <property name='onkeypress' value=' ' />
+              <property name='onkeyup' value=' ' />
+              <property name='onmousedown' value=' ' />
+              <property name='onmousemove' value=' ' />
+              <property name='onmouseout' value=' ' />
+              <property name='onmouseover' value=' ' />
+              <property name='onmouseup' value=' ' />
+            </control>
+          </facet>
+          <facet name='cancel'>
+            <control component-type='com.webmethods.caf.faces.output.HtmlButton' renderer-type='javax.faces.Button'>
+              <property name='id' value='closeButton' />
+              <property name='label' value='Close' />
+              <property name='onblur' value=' ' />
+              <property name='onclick' value='//Reset the sharedMessaging functionality&#13;&#10;saas_StEPS_toplevelarray = [];&#13;&#10;saas_StEPS_message_no = 0;&#13;&#10;var saas_StEPS_dbType = CAF.model(&apos;#{activePageBean.clientIds[&quot;messageType&quot;]}&apos;);&#13;&#10;var saas_StEPS_dbTitle = CAF.model(&apos;#{activePageBean.clientIds[&quot;messageTitle&quot;]}&apos;);&#13;&#10;var saas_StEPS_dbText = CAF.model(&apos;#{activePageBean.clientIds[&quot;messageText&quot;]}&apos;);&#13;&#10;var saas_StEPS_dbMsgNo = CAF.model(&apos;#{activePageBean.clientIds[&quot;messageNumber&quot;]}&apos;);&#13;&#10;var saas_StEPS_dbMsgTtl = CAF.model(&apos;#{activePageBean.clientIds[&quot;messageTotal&quot;]}&apos;);&#13;&#10;saas_StEPS_dbType.setValue(&quot;&quot;);&#13;&#10;saas_StEPS_dbTitle.setValue(&quot;&quot;);&#13;&#10;saas_StEPS_dbText.setValue(&quot;&quot;);&#13;&#10;saas_StEPS_dbMsgNo.setValue(&quot;&quot;);&#13;&#10;saas_StEPS_dbMsgTtl.setValue(&quot;&quot;);&#13;&#10;&#13;&#10;//Delete the current error elements from the document ready to handle subsequent&#13;&#10;//AJAX requests.&#13;&#10;var saas_StEPS_aa_delete = document.getElementsByTagName(&quot;error&quot;);&#13;&#10;var saas_StEPS_bb_delete = document.getElementsByTagName(&quot;custom:error&quot;);&#13;&#10;while(saas_StEPS_aa_delete.length &gt; 0)&#13;&#10;{&#13;&#10;saas_StEPS_aa_delete[0].parentNode.removeChild(saas_StEPS_aa_delete[0]);&#13;&#10;}&#13;&#10;while(saas_StEPS_bb_delete.length &gt; 0)&#13;&#10;{&#13;&#10;saas_StEPS_bb_delete[0].parentNode.removeChild(saas_StEPS_bb_delete[0]);&#13;&#10;}&#13;&#10;CAF.model(&apos;#{activePageBean.clientIds[&quot;sharedMessagingModalDialog&quot;]}&apos;).hide();&#13;&#10;' />
+              <property name='ondblclick' value=' ' />
+              <property name='onfocus' value=' ' />
+              <property name='onkeydown' value=' ' />
+              <property name='onkeypress' value=' ' />
+              <property name='onkeyup' value=' ' />
+              <property name='onmousedown' value=' ' />
+              <property name='onmousemove' value=' ' />
+              <property name='onmouseout' value=' ' />
+              <property name='onmouseover' value=' ' />
+              <property name='onmouseup' value=' ' />
+            </control>
+          </facet>
+          <facet name='other'>
+            <control component-type='com.webmethods.caf.faces.output.HtmlButton' renderer-type='javax.faces.Button'>
+              <property name='id' value='previousMessageButton' />
+              <property name='label' value='Previous Message' />
+              <property name='onblur' value=' ' />
+              <property name='onclick' value='previousError();' />
+              <property name='ondblclick' value=' ' />
+              <property name='onfocus' value=' ' />
+              <property name='onkeydown' value=' ' />
+              <property name='onkeypress' value=' ' />
+              <property name='onkeyup' value=' ' />
+              <property name='onmousedown' value=' ' />
+              <property name='onmousemove' value=' ' />
+              <property name='onmouseout' value=' ' />
+              <property name='onmouseover' value=' ' />
+              <property name='onmouseup' value=' ' />
+            </control>
+          </facet>
+          <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+            <property name='id' value='blockPanel' />
+            <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+              <property name='id' value='staticRow' />
+              <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+                <property name='id' value='staticCell' />
+                <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+                  <property name='id' value='messageTitle' />
+                  <property name='value' value='messageTitle' />
+                </control>
+              </control>
+              <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+                <property name='id' value='staticCell1' />
+              </control>
+            </control>
+            <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+              <property name='id' value='staticRow1' />
+              <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+                <property name='id' value='staticCell2' />
+                <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+                  <property name='id' value='messageText' />
+                  <property name='value' value='messageText' />
+                </control>
+              </control>
+              <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+                <property name='id' value='staticCell3' />
+              </control>
+            </control>
+            <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+              <property name='id' value='staticRow2' />
+              <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+                <property name='id' value='staticCell4' />
+              </control>
+              <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+                <property name='id' value='staticCell5' />
+              </control>
+            </control>
+            <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+              <property name='id' value='staticRow3' />
+              <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+                <property name='id' value='staticCell6' />
+                <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+                  <property name='id' value='htmlOutputText4' />
+                  <property name='value' value='Message' />
+                </control>
+                <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+                  <property name='id' value='messageNumber' />
+                  <property name='style' value='font-size: 14px;&#13;&#10;font-weight: bold;' />
+                  <property name='value' value='messageNumber' />
+                </control>
+                <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+                  <property name='id' value='htmlOutputText3' />
+                  <property name='value' value='Of' />
+                </control>
+                <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+                  <property name='id' value='messageTotal' />
+                  <property name='style' value='font-size: 14px;&#13;&#10;font-weight: bold;' />
+                  <property name='value' value='messageTotal' />
+                </control>
+              </control>
+            </control>
+          </control>
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.output.Script' renderer-type='com.webmethods.caf.faces.output.Script'>
+        <property name='id' value='AJAXResponderScript' />
+        <property name='value' value='//Respond to AJAX requests being completed&#13;&#10;Ajax.Responders.register({&#13;&#10;onComplete: function()&#13;&#10;{&#13;&#10;var timeStamp = new Date().getTime();&#13;&#10;var saas_StEPS_Ajax_Indicator = CAF.model(&apos;#{activePageBean.clientIds[&apos;ajaxIndicator&apos;]}&apos;);&#13;&#10;var saas_StEPS_Ajax_Indicator_Val = saas_StEPS_Ajax_Indicator.setValue(timeStamp);&#13;&#10;}&#13;&#10;});&#13;&#10;&#13;&#10;' />
+      </control>
+      <control component-type='com.webmethods.caf.faces.output.Script' renderer-type='com.webmethods.caf.faces.output.Script'>
+        <property name='id' value='controlScript' />
+        <property name='value' value='//Wait until the document is loaded&#13;&#10;Event.waitUntilLoaded(&#13;&#10;function()&#13;&#10;{&#13;&#10;saas_StEPS_initialise();&#13;&#10;});&#13;&#10;&#13;&#10;' />
+      </control>
+      <control component-type='com.webmethods.caf.faces.output.Script' renderer-type='com.webmethods.caf.faces.output.Script'>
+        <property name='id' value='mainScript' />
+        <property name='value' value='var saas_StEPS_message_no = 0;&#13;&#10;saas_StEPS_toplevelarray = [];&#13;&#10;&#13;&#10;function saas_StEPS_alertobject(saas_StEPS_ttl,saas_StEPS_msg,saas_StEPS_typ)&#13;&#10;{&#13;&#10;&#9;this.saas_StEPS_title = saas_StEPS_ttl;&#13;&#10;&#9;this.saas_StEPS_message = saas_StEPS_msg;&#13;&#10;&#9;this.saas_StEPS_type = saas_StEPS_typ;&#13;&#10;}&#13;&#10;&#13;&#10;function saas_StEPS_createnewobject(saas_StEPS_ttl, saas_StEPS_msg, saas_StEPS_typ)&#13;&#10;{&#13;&#10;&#9;var saas_StEPS_newobject = new saas_StEPS_alertobject(saas_StEPS_ttl,saas_StEPS_msg,saas_StEPS_typ);&#13;&#10;&#9;saas_StEPS_toplevelarray.push(saas_StEPS_newobject);&#13;&#10;}&#13;&#10;&#13;&#10;&#13;&#10;function saas_StEPS_createArrayOfErrorElements()&#13;&#10;{&#13;&#10;&#9;//Create array of error elements&#13;&#10;&#9;var saas_StEPS_aa = document.getElementsByTagName(&quot;error&quot;);&#13;&#10;&#9;var saas_StEPS_i = 0;&#13;&#10;&#9;while(saas_StEPS_i &lt;saas_StEPS_aa.length)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;//For each error element : create a custom dialog box object and attach to main array&#13;&#10;&#9;&#9;var saas_StEPS_title = saas_StEPS_aa[saas_StEPS_i].getAttribute(&quot;dialog_title&quot;);&#13;&#10;&#9;&#9;var saas_StEPS_style = saas_StEPS_aa[saas_StEPS_i].getAttribute(&quot;dialog_style&quot;);&#13;&#10;&#9;&#9;var saas_StEPS_message = saas_StEPS_aa[saas_StEPS_i].getAttribute(&quot;dialog_message&quot;);&#13;&#10;&#9;&#9;saas_StEPS_createnewobject(saas_StEPS_title,saas_StEPS_message,saas_StEPS_style);&#13;&#10;&#9;&#9;saas_StEPS_i++;&#13;&#10;&#9;}&#13;&#10;&#9;while(saas_StEPS_aa.length &gt; 0)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;saas_StEPS_aa[0].parentNode.removeChild(saas_StEPS_aa[0]);&#13;&#10;&#9;}&#13;&#10;&#9;&#13;&#10;&#9;var saas_StEPS_bb = document.getElementsByTagName(&quot;custom:error&quot;);&#13;&#10;&#9;var saas_StEPS_i = 0;&#13;&#10;&#9;while(saas_StEPS_i &lt;saas_StEPS_bb.length)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;//For each error element : create a custom dialog box object and attach to main array&#13;&#10;&#9;&#9;var saas_StEPS_title = saas_StEPS_bb[saas_StEPS_i].getAttribute(&quot;dialog_title&quot;);&#13;&#10;&#9;&#9;var saas_StEPS_style = saas_StEPS_bb[saas_StEPS_i].getAttribute(&quot;dialog_style&quot;);&#13;&#10;&#9;&#9;var saas_StEPS_message = saas_StEPS_bb[saas_StEPS_i].getAttribute(&quot;dialog_message&quot;);&#13;&#10;&#9;&#9;saas_StEPS_createnewobject(saas_StEPS_title,saas_StEPS_message,saas_StEPS_style);&#13;&#10;&#9;&#9;saas_StEPS_i++;&#13;&#10;&#9;}&#13;&#10;&#9;while(saas_StEPS_bb.length &gt; 0)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;saas_StEPS_bb[0].parentNode.removeChild(saas_StEPS_bb[0]);&#13;&#10;&#9;}&#13;&#10;}&#13;&#10;&#13;&#10;function saas_StEPS_sortArray()&#13;&#10;{&#13;&#10;&#9;//Create arrays for each type of message&#13;&#10;&#9;var saas_StEPS_errorArray = [];&#13;&#10;&#9;var saas_StEPS_successArray = [];&#13;&#10;&#9;var saas_StEPS_warningArray = [];&#13;&#10;&#9;var saas_StEPS_promptArray = [];&#13;&#10;&#13;&#10;&#9;//Iterate master array and add the different message types to their appropriate arrays&#13;&#10;&#9;var saas_StEPS_sort_counter = 0;&#13;&#10;&#9;while(saas_StEPS_sort_counter &lt; saas_StEPS_toplevelarray.length)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;if(saas_StEPS_toplevelarray[saas_StEPS_sort_counter].saas_StEPS_type.toLowerCase() == &quot;error&quot;)&#13;&#10;&#9;&#9;{&#13;&#10;&#9;&#9;&#9;saas_StEPS_errorArray.push(saas_StEPS_toplevelarray[saas_StEPS_sort_counter]);&#13;&#10;&#9;&#9;}&#13;&#10;&#9;&#9;if(saas_StEPS_toplevelarray[saas_StEPS_sort_counter].saas_StEPS_type.toLowerCase() == &quot;success&quot;)&#13;&#10;&#9;&#9;{&#13;&#10;&#9;&#9;&#9;saas_StEPS_successArray.push(saas_StEPS_toplevelarray[saas_StEPS_sort_counter]);&#13;&#10;&#9;&#9;}&#13;&#10;&#9;&#9;if(saas_StEPS_toplevelarray[saas_StEPS_sort_counter].saas_StEPS_type.toLowerCase() == &quot;warning&quot;)&#13;&#10;&#9;&#9;{&#13;&#10;&#9;&#9;&#9;saas_StEPS_warningArray.push(saas_StEPS_toplevelarray[saas_StEPS_sort_counter]);&#13;&#10;&#9;&#9;}&#13;&#10;&#9;&#9;if(saas_StEPS_toplevelarray[saas_StEPS_sort_counter].saas_StEPS_type.toLowerCase() == &quot;prompt&quot;)&#13;&#10;&#9;&#9;{&#13;&#10;&#9;&#9;&#9;saas_StEPS_promptArray.push(saas_StEPS_toplevelarray[saas_StEPS_sort_counter]);&#13;&#10;&#9;&#9;}&#13;&#10;&#9;&#9;saas_StEPS_sort_counter++;&#13;&#10;&#9;}&#13;&#10;&#13;&#10;&#9;//Clear the master array&#13;&#10;&#9;saas_StEPS_toplevelarray = [];&#13;&#10;&#13;&#10;&#9;//Create counters for each message types arrays&#13;&#10;&#9;var saas_StEPS_errorcounter = 0;&#13;&#10;&#9;var saas_StEPS_warningcounter = 0;&#13;&#10;&#9;var saas_StEPS_promptcounter = 0;&#13;&#10;&#9;var saas_StEPS_successcounter = 0;&#13;&#10;&#9;&#13;&#10;&#9;//Add the elements from each array in type order 1.error 2.warning 3.prompt 4.success&#13;&#10;&#9;while(saas_StEPS_errorcounter &lt; saas_StEPS_errorArray.length)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;saas_StEPS_toplevelarray.push(saas_StEPS_errorArray[saas_StEPS_errorcounter]);&#13;&#10;&#9;&#9;saas_StEPS_errorcounter++;&#13;&#10;&#9;}&#13;&#10;&#9;while(saas_StEPS_warningcounter &lt; saas_StEPS_warningArray.length)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;saas_StEPS_toplevelarray.push(saas_StEPS_warningArray[saas_StEPS_warningcounter]);&#13;&#10;&#9;&#9;saas_StEPS_warningcounter++;&#13;&#10;&#9;}&#13;&#10;&#9;while(saas_StEPS_promptcounter &lt; saas_StEPS_promptArray.length)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;saas_StEPS_toplevelarray.push(saas_StEPS_promptArray[saas_StEPS_promptcounter]);&#13;&#10;&#9;&#9;saas_StEPS_promptcounter++;&#13;&#10;&#9;}&#13;&#10;&#9;while(saas_StEPS_successcounter &lt; saas_StEPS_successArray.length)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;saas_StEPS_toplevelarray.push(saas_StEPS_successArray[saas_StEPS_successcounter]);&#13;&#10;&#9;&#9;saas_StEPS_successcounter++;&#13;&#10;&#9;}&#13;&#10;}&#13;&#10;&#13;&#10;function saas_StEPS_updateModal()&#13;&#10;{&#13;&#10;&#9;//Get a reference to the controls on the modal dialog&#13;&#10;&#9;var saas_StEPS_dbType = CAF.model(&apos;#{activePageBean.clientIds[&quot;messageType&quot;]}&apos;);&#13;&#10;&#9;var saas_StEPS_dbTitle = CAF.model(&apos;#{activePageBean.clientIds[&quot;messageTitle&quot;]}&apos;);&#13;&#10;&#9;var saas_StEPS_dbText = CAF.model(&apos;#{activePageBean.clientIds[&quot;messageText&quot;]}&apos;);&#13;&#10;&#9;var saas_StEPS_dbMsgNo = CAF.model(&apos;#{activePageBean.clientIds[&quot;messageNumber&quot;]}&apos;);&#13;&#10;&#9;var saas_StEPS_dbMsgTtl = CAF.model(&apos;#{activePageBean.clientIds[&quot;messageTotal&quot;]}&apos;);&#13;&#10;&#13;&#10;&#9;//Set the value of the controls to the values of the message to view&#13;&#10;&#9;saas_StEPS_dbType.setValue(saas_StEPS_toplevelarray[saas_StEPS_message_no].saas_StEPS_type);&#13;&#10;&#9;saas_StEPS_dbTitle.setValue(saas_StEPS_toplevelarray[saas_StEPS_message_no].saas_StEPS_title);&#13;&#10;&#9;saas_StEPS_dbText.setValue(saas_StEPS_toplevelarray[saas_StEPS_message_no].saas_StEPS_message);&#13;&#10;&#9;saas_StEPS_dbMsgNo.setValue(saas_StEPS_message_no + 1);&#13;&#10;&#9;saas_StEPS_dbMsgTtl.setValue(saas_StEPS_toplevelarray.length);&#13;&#10;&#13;&#10;&#9;//Update the colour of the modals Type label&#13;&#10;&#9;var saas_StEPS_element = document.getElementById(saas_StEPS_dbType.id);&#13;&#10;&#9;if(saas_StEPS_dbType.getValue() == &quot;error&quot;)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;saas_StEPS_element.style.color = &quot;#FF0000&quot;;&#13;&#10;&#9;}&#13;&#10;&#9;if(saas_StEPS_dbType.getValue() == &quot;warning&quot;)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;saas_StEPS_element.style.color = &quot;#FF9900&quot;;&#13;&#10;&#9;}&#13;&#10;&#9;if(saas_StEPS_dbType.getValue() == &quot;prompt&quot;)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;saas_StEPS_element.style.color = &quot;#0000FF&quot;;&#13;&#10;&#9;}&#13;&#10;&#9;if(saas_StEPS_dbType.getValue() == &quot;success&quot;)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;saas_StEPS_element.style.color = &quot;#00FF00&quot;;&#13;&#10;&#9;}&#13;&#10;}&#13;&#10;&#13;&#10;function saas_StEPS_initialise()&#13;&#10;{&#13;&#10;&#9;saas_StEPS_createArrayOfErrorElements();&#13;&#10;&#9;if(saas_StEPS_toplevelarray.length &gt; 0)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;saas_StEPS_sortArray();&#13;&#10;&#9;&#9;saas_StEPS_updateModal();&#13;&#10;&#9;&#9;CAF.model(&apos;#{activePageBean.clientIds[&quot;previousMessageButton&quot;]}&apos;).setDisabled(true);&#13;&#10;&#9;&#9;if(saas_StEPS_toplevelarray.length == 1)&#13;&#10;&#9;&#9;{&#13;&#10;&#9;&#9;&#9;CAF.model(&apos;#{activePageBean.clientIds[&quot;nextMessageButton&quot;]}&apos;).setDisabled(true);&#13;&#10;&#9;&#9;} else {&#13;&#10;&#9;&#9;&#9;CAF.model(&apos;#{activePageBean.clientIds[&quot;nextMessageButton&quot;]}&apos;).setDisabled(false);&#13;&#10;&#9;&#9;}&#13;&#10;&#9;&#9;CAF.model(&apos;#{activePageBean.clientIds[&quot;sharedMessagingModalDialog&quot;]}&apos;).show();&#13;&#10;&#9;}&#13;&#10;}&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;function previousError()&#13;&#10;{&#13;&#10;&#9;if(saas_StEPS_message_no == saas_StEPS_toplevelarray.length-1)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;CAF.model(&apos;#{activePageBean.clientIds[&quot;nextMessageButton&quot;]}&apos;).setDisabled(false);&#13;&#10;&#9;}&#13;&#10;&#9;saas_StEPS_message_no--;&#13;&#10;&#9;saas_StEPS_updateModal();&#13;&#10;&#9;if(saas_StEPS_message_no == 0)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;CAF.model(&apos;#{activePageBean.clientIds[&quot;previousMessageButton&quot;]}&apos;).setDisabled(true);&#13;&#10;&#9;}&#13;&#10;}&#13;&#10;&#13;&#10;&#13;&#10;function nextError()&#13;&#10;{&#13;&#10;&#9;if( saas_StEPS_message_no == 0) {&#13;&#10;&#9;&#9;CAF.model(&apos;#{activePageBean.clientIds[&quot;previousMessageButton&quot;]}&apos;).setDisabled(false);&#13;&#10;&#9;}&#13;&#10;&#9;saas_StEPS_message_no++;&#13;&#10;&#9;saas_StEPS_updateModal();&#13;&#10;&#9;if(saas_StEPS_message_no == saas_StEPS_toplevelarray.length-1)&#13;&#10;&#9;{&#13;&#10;&#9;&#9;CAF.model(&apos;#{activePageBean.clientIds[&quot;nextMessageButton&quot;]}&apos;).setDisabled(true);&#13;&#10;&#9;}&#13;&#10;&#13;&#10;}' />
+      </control>
+      <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+        <property name='id' value='blockPanel1' />
+        <control component-type='javax.faces.HtmlInputHidden' renderer-type='javax.faces.Hidden'>
+          <property name='id' value='ajaxIndicator' />
+          <property name='value' value='true' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.component.script.CustomClientScript' renderer-type='com.webmethods.caf.faces.render.html.script.CustomClientScriptRenderer'>
+        <property name='code' value='saas_StEPS_initialise();' />
+        <property name='event' value='onValueChange' />
+        <property name='for' value='messagingForm:ajaxIndicator' />
+        <property name='id' value='customClientScript' />
+      </control>
+    </control>
+  </control>
+</view>

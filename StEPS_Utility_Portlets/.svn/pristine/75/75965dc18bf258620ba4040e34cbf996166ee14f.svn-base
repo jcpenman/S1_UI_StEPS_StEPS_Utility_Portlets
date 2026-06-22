@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view>
+  <property name='pageManagedBean' value='BooleanSetterDefaultviewView' />
+  <property name='preferencesBean' value='BooleanSetter' />
+  <design-time-attribute name='portlet' value='BooleanSetter' />
+  <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+  </control>
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='booleanSetterForm' />
+    <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <property name='id' value='blockPanel' />
+      <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+        <property name='id' value='htmlOutputText' />
+        <property name='value' value='This is a utility portlet for setting boolean values. Bind to the appropriate preference to set True or False' />
+      </control>
+    </control>
+  </control>
+</view>

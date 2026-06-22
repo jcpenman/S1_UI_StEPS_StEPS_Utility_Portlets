@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:tns="http://WMSTEPSIS/STEPS_UI_Core/Team/WSD/getTeam_WSD" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="getTeam_WSD" targetNamespace="http://WMSTEPSIS/STEPS_UI_Core/Team/WSD/getTeam_WSD">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://WMSTEPSIS/STEPS_UI_Core/Team/WSD/getTeam_WSD" targetNamespace="http://WMSTEPSIS/STEPS_UI_Core/Team/WSD/getTeam_WSD">
+          <xsd:complexType name="getTeam">
+            <xsd:sequence>
+              <xsd:element name="employee_in" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="getTeamResponse">
+            <xsd:sequence>
+              <xsd:element name="team_out" nillable="true" type="xsd:string"/>
+              <xsd:element name="error_boolean" nillable="true" type="xsd:string"/>
+              <xsd:element name="error_text" nillable="true" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        			<xsd:element name="getTeam" type="tns:getTeam"/>
+			<xsd:element name="getTeamResponse" type="tns:getTeamResponse"/>
+	</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getTeam_WSD_PortType_getTeamResponse">
+    <wsdl:part name="parameters" element="tns:getTeamResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTeam_WSD_PortType_getTeam">
+    <wsdl:part name="parameters" element="tns:getTeam">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="getTeam_WSD_PortType">
+    <wsdl:operation name="getTeam">
+      <wsdl:input message="tns:getTeam_WSD_PortType_getTeam">
+    </wsdl:input>
+      <wsdl:output message="tns:getTeam_WSD_PortType_getTeamResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="STEPS_UI_Core_Team_WSD_getTeam_WSD_Binder" type="tns:getTeam_WSD_PortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getTeam">
+      <soap:operation soapAction="STEPS_UI_Core_Team_WSD_getTeam_WSD_Binder_getTeam" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="getTeam_WSD">
+    <wsdl:port name="STEPS_UI_Core_Team_WSD_getTeam_WSD_Port" binding="tns:STEPS_UI_Core_Team_WSD_getTeam_WSD_Binder">
+      <soap:address location="http://WMSTEPSIS:5555/ws/STEPS_UI_Core.Team.WSD:getTeam_WSD"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

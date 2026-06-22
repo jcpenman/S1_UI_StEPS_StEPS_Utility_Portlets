@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//WebContent/BooleanSetter/default.view=UTF-8
+encoding//WebContent/LogoutCountDownTimerLimit/default.view=UTF-8
+encoding//WebContent/NoContextMenu/default.view=UTF-8
+encoding//WebContent/ShowDebug/default.view=UTF-8
+encoding//WebContent/UtilityBatchRecalc/default.view=UTF-8
+encoding//WebContent/UtilityDSAReminders/default.view=UTF-8
+encoding//WebContent/UtilityFeeStatusReport2012All/default.view=UTF-8
+encoding//WebContent/UtilityFeeStatusReport2012Institution/default.view=UTF-8
+instance/org.eclipse.core.net/org.eclipse.core.net.hasMigrated=true

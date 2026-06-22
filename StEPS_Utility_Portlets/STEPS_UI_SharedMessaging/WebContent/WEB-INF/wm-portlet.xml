@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wm-portlet-app version="1.0">
+	<wm-portlet>
+		<portlet-name>SharedMessaging</portlet-name>
+	</wm-portlet>
+
+
+
+	<wm-portlet>
+		<portlet-name>TestPortletOne</portlet-name>
+	</wm-portlet></wm-portlet-app>
+

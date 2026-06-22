@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE faces-config PUBLIC
+    "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
+    "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+
+<faces-config>
+	<application>
+		<message-bundle>com.webmethods.caf.AppResources</message-bundle>
+		<locale-config>
+			<default-locale>en_US</default-locale>
+		</locale-config>
+	</application>
+
+	<managed-bean>
+		<description>applicationbean</description>
+		<display-name>STEPS_UI_Utilities</display-name>
+		<managed-bean-name>Steps_ui_utilities</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.Steps_ui_utilities</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<description>portletbean</description>
+		<display-name>BooleanSetter</display-name>
+		<managed-bean-name>BooleanSetter</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.booleansetter.BooleanSetter</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<description>Specifies whether the session bean expires when the pageflow is out of scope</description>
+			<display-name>Expire With Page Flow</display-name>
+			<property-name>expireWithPageFlow</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<description>pagebean</description>
+		<display-name>BooleanSetter/default</display-name>
+		<managed-bean-name>BooleanSetterDefaultviewView</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.booleansetter.BooleanSetterDefaultviewView</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<description>Specifies whether the session bean expires when the pageflow is out of scope</description>
+			<display-name>Expire With Page Flow</display-name>
+			<property-name>expireWithPageFlow</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+	</managed-bean>
+	<navigation-rule>
+		<from-view-id>BooleanSetter/*</from-view-id>
+		<navigation-case>
+			<from-outcome>default</from-outcome>
+			<to-view-id>/BooleanSetter/default.view</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+
+	<managed-bean>
+		<description>portletbean</description>
+		<display-name>ShowDebug</display-name>
+		<managed-bean-name>ShowDebug</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.showdebug.ShowDebug</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<description>Specifies whether the session bean expires when the pageflow is out of scope</description>
+			<display-name>Expire With Page Flow</display-name>
+			<property-name>expireWithPageFlow</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<description>pagebean</description>
+		<display-name>ShowDebug/default</display-name>
+		<managed-bean-name>ShowDebugDefaultviewView</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.showdebug.ShowDebugDefaultviewView</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<description>Specifies whether the session bean expires when the pageflow is out of scope</description>
+			<display-name>Expire With Page Flow</display-name>
+			<property-name>expireWithPageFlow</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<description>portletbean</description>
+		<display-name>LogoutCountDownTimerLimit</display-name>
+		<managed-bean-name>LogoutCountDownTimerLimit</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.logoutcountdowntimerlimit.LogoutCountDownTimerLimit</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<description>Specifies whether the session bean expires when the pageflow is out of scope</description>
+			<display-name>Expire With Page Flow</display-name>
+			<property-name>expireWithPageFlow</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<description>pagebean</description>
+		<display-name>LogoutCountDownTimerLimit/default</display-name>
+		<managed-bean-name>LogoutCountDownTimerLimitDefaultviewView</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.logoutcountdowntimerlimit.LogoutCountDownTimerLimitDefaultviewView</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<description>Specifies whether the session bean expires when the pageflow is out of scope</description>
+			<display-name>Expire With Page Flow</display-name>
+			<property-name>expireWithPageFlow</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<description>portletbean</description>
+		<display-name>NoContextMenu</display-name>
+		<managed-bean-name>NoContextMenu</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.nocontextmenu.NoContextMenu</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<description>Specifies whether the session bean expires when the pageflow is out of scope</description>
+			<display-name>Expire With Page Flow</display-name>
+			<property-name>expireWithPageFlow</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<description>pagebean</description>
+		<display-name>NoContextMenu/default</display-name>
+		<managed-bean-name>NoContextMenuDefaultviewView</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.nocontextmenu.NoContextMenuDefaultviewView</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<description>Specifies whether the session bean expires when the pageflow is out of scope</description>
+			<display-name>Expire With Page Flow</display-name>
+			<property-name>expireWithPageFlow</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+	</managed-bean>
+	<navigation-rule>
+		<from-view-id>ShowDebug/*</from-view-id>
+		<navigation-case>
+			<from-outcome>default</from-outcome>
+			<to-view-id>/ShowDebug/default.view</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>LogoutCountDownTimerLimit/*</from-view-id>
+		<navigation-case>
+			<from-outcome>default</from-outcome>
+			<to-view-id>/LogoutCountDownTimerLimit/default.view</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>NoContextMenu/*</from-view-id>
+		<navigation-case>
+			<from-outcome>default</from-outcome>
+			<to-view-id>/NoContextMenu/default.view</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<managed-bean>
+		<description>portletbean</description>
+		<display-name>UtilityBatchRecalc</display-name>
+		<managed-bean-name>UtilityBatchRecalc</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.utilitybatchrecalc.UtilityBatchRecalc</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<description>Specifies whether the session bean expires when the pageflow is out of scope</description>
+			<display-name>Expire With Page Flow</display-name>
+			<property-name>expireWithPageFlow</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<description>pagebean</description>
+		<display-name>UtilityBatchRecalc/default</display-name>
+		<managed-bean-name>UtilityBatchRecalcDefaultviewView</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.utilitybatchrecalc.UtilityBatchRecalcDefaultviewView</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<description>Specifies whether the session bean expires when the pageflow is out of scope</description>
+			<display-name>Expire With Page Flow</display-name>
+			<property-name>expireWithPageFlow</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+	</managed-bean>
+	<navigation-rule>
+		<from-view-id>/UtilityBatchRecalc/*</from-view-id>
+		<navigation-case>
+			<from-outcome>default</from-outcome>
+			<to-view-id>/UtilityBatchRecalc/default.view</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<managed-bean>
+		<description>portletbean</description>
+		<display-name>UtilityFeeStatusReport2012All</display-name>
+		<managed-bean-name>UtilityFeeStatusReport2012All</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.utilityfeestatusreport2012all.UtilityFeeStatusReport2012All</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<description>Specifies whether the session bean expires when the pageflow is out of scope</description>
+			<display-name>Expire With Page Flow</display-name>
+			<property-name>expireWithPageFlow</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<description>pagebean</description>
+		<display-name>UtilityFeeStatusReport2012All/default</display-name>
+		<managed-bean-name>UtilityFeeStatusReport2012AllDefaultviewView</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.utilityfeestatusreport2012all.UtilityFeeStatusReport2012AllDefaultviewView</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<description>Specifies whether the session bean expires when the pageflow is out of scope</description>
+			<display-name>Expire With Page Flow</display-name>
+			<property-name>expireWithPageFlow</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+	</managed-bean>
+	<navigation-rule>
+		<from-view-id>/UtilityFeeStatusReport2012All/*</from-view-id>
+		<navigation-case>
+			<from-outcome>default</from-outcome>
+			<to-view-id>/UtilityFeeStatusReport2012All/default.view</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<managed-bean>
+		<description>portletbean</description>
+		<display-name>UtilityFeeStatusReport2012Institution</display-name>
+		<managed-bean-name>UtilityFeeStatusReport2012Institution</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.utilityfeestatusreport2012institution.UtilityFeeStatusReport2012Institution</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<description>Specifies whether the session bean expires when the pageflow is out of scope</description>
+			<display-name>Expire With Page Flow</display-name>
+			<property-name>expireWithPageFlow</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<description>pagebean</description>
+		<display-name>UtilityFeeStatusReport2012Institution/default</display-name>
+		<managed-bean-name>UtilityFeeStatusReport2012InstitutionDefaultviewView</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.utilityfeestatusreport2012institution.UtilityFeeStatusReport2012InstitutionDefaultviewView</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<description>Specifies whether the session bean expires when the pageflow is out of scope</description>
+			<display-name>Expire With Page Flow</display-name>
+			<property-name>expireWithPageFlow</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+	</managed-bean>
+	<navigation-rule>
+		<from-view-id>/UtilityFeeStatusReport2012Institution/*</from-view-id>
+		<navigation-case>
+			<from-outcome>default</from-outcome>
+			<to-view-id>/UtilityFeeStatusReport2012Institution/default.view</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<managed-bean>
+		<managed-bean-name>RunUtilityBatchRecalc</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.wsclient.steps_ui_utilities.wsd.runutilitybatchrecalc_wsd.RunUtilityBatchRecalc_WSC</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<description>Specifies whether the session bean expires when the pageflow is out of scope</description>
+			<display-name>Expire With Page Flow</display-name>
+			<property-name>expireWithPageFlow</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>RunUtilityFeeStatusReport2012All</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.wsclient.steps_ui_utilities.wsd.runutilityfeestatusreport2012all_wsd.RunUtilityFeeStatusReport2012All_WSC</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<description>Specifies whether the session bean expires when the pageflow is out of scope</description>
+			<display-name>Expire With Page Flow</display-name>
+			<property-name>expireWithPageFlow</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>RunUtilityFeeStatusReport2012Institution</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.wsclient.steps_ui_utilities.wsd.runutilityfeestatusreport2012institution_wsd.RunUtilityFeeStatusReport2012Institution_WSC</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<description>Specifies whether the session bean expires when the pageflow is out of scope</description>
+			<display-name>Expire With Page Flow</display-name>
+			<property-name>expireWithPageFlow</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<description>portletbean</description>
+		<display-name>UtilityDSAReminders</display-name>
+		<managed-bean-name>UtilityDSAReminders</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.utilitydsareminders.UtilityDSAReminders</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<description>Specifies whether the session bean expires when the pageflow is out of scope</description>
+			<display-name>Expire With Page Flow</display-name>
+			<property-name>expireWithPageFlow</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<description>pagebean</description>
+		<display-name>UtilityDSAReminders/default</display-name>
+		<managed-bean-name>UtilityDSARemindersDefaultviewView</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.utilitydsareminders.UtilityDSARemindersDefaultviewView</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<description>Specifies whether the session bean expires when the pageflow is out of scope</description>
+			<display-name>Expire With Page Flow</display-name>
+			<property-name>expireWithPageFlow</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+	</managed-bean>
+	<navigation-rule>
+		<from-view-id>/UtilityDSAReminders/*</from-view-id>
+		<navigation-case>
+			<from-outcome>default</from-outcome>
+			<to-view-id>/UtilityDSAReminders/default.view</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<managed-bean>
+		<managed-bean-name>RunDSAReminderLetters</managed-bean-name>
+		<managed-bean-class>com.webmethods.caf.wsclient.steps_ui_utilities.wsd.rundsareminderletters_wsd.RunDSAReminderLetters_WSC</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<description>Specifies whether the session bean expires when the pageflow is out of scope</description>
+			<display-name>Expire With Page Flow</display-name>
+			<property-name>expireWithPageFlow</property-name>
+			<property-class>java.lang.Boolean</property-class>
+			<value>true</value>
+		</managed-property>
+	</managed-bean></faces-config>

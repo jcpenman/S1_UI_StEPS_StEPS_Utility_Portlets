@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view>
+  <property name='pageManagedBean' value='UtilityFeeStatusReport2012InstitutionDefaultviewView' />
+  <property name='preferencesBean' value='UtilityFeeStatusReport2012Institution' />
+  <design-time-attribute name='portlet' value='UtilityFeeStatusReport2012Institution' />
+  <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+  </control>
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='defaultForm' />
+    <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+      <property name='id' value='blockPanel' />
+      <control component-type='com.webmethods.caf.faces.output.FormattedText' renderer-type='com.webmethods.caf.faces.output.FormattedText'>
+        <property name='id' value='formattedText' />
+        <property name='value' value='&#13;&#10;&#13;&#10;&#13;&#10;' />
+      </control>
+    </control>
+    <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+      <property name='id' value='htmlInputTextInstitutionCode' />
+      <property name='value' value='#{UtilityFeeStatusReport2012InstitutionDefaultviewView.runUtilityFeeStatusReport2012Institution.parameters.runUtilityFeeStatusReport2012Institution.inst_code}' />
+      <property name='width' value='input10' />
+    </control>
+    <control component-type='com.webmethods.caf.faces.command.async.Button' renderer-type='com.webmethods.caf.faces.command.async.Button'>
+      <property name='action' value='#{UtilityFeeStatusReport2012InstitutionDefaultviewView.buttonFeeStatusReport2012Institution_action}' />
+      <property name='id' value='buttonFeeStatusReport2012Institution' />
+      <property name='onclick' value='alert(&apos;Fee Status Report job started ...&apos;);' />
+      <property name='value' value='Fee Status Report - Institution' />
+    </control>
+  </control>
+</view>

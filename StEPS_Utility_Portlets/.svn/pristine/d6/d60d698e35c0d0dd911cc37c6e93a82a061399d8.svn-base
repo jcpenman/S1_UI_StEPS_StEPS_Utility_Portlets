@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view>
+  <property name='pageManagedBean' value='PreviousCasesDefaultviewView' />
+  <property name='preferencesBean' value='PreviousCases' />
+  <design-time-attribute name='portlet' value='PreviousCases' />
+  <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+  </control>
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='previousCasesForm' />
+    <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertyGroup'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <property name='id' value='previousCasesPropertyGroup' />
+      <property name='label' value='Previous Cases' />
+      <control component-type='com.webmethods.caf.faces.table.AsyncTable' renderer-type='com.webmethods.caf.faces.table.AsyncTable'>
+        <property name='footerClass' value='portlet-section-footer' />
+        <property name='headerClass' value='portlet-section-subheader' />
+        <property name='id' value='asyncTable' />
+        <property name='onclick' value=' ' />
+        <property name='ondblclick' value=' ' />
+        <property name='onkeydown' value=' ' />
+        <property name='onkeypress' value=' ' />
+        <property name='onkeyup' value=' ' />
+        <property name='onmousedown' value=' ' />
+        <property name='onmousemove' value=' ' />
+        <property name='onmouseout' value=' ' />
+        <property name='onmouseover' value=' ' />
+        <property name='onmouseup' value=' ' />
+        <property name='rowClasses' value='portlet-section-body,portlet-section-alternate' />
+        <property name='rows' value='10' />
+        <property name='selectedRowClass' value='portlet-section-selected' />
+        <property name='value' value='#{PreviousCasesDefaultviewView.previousCasesProvider}' />
+        <property name='var' value='previousCase' />
+        <property name='width' value='100%' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='value' value='Previous Cases' />
+          </control>
+        </facet>
+        <control component-type='javax.faces.Column' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+          <property name='label' value='Stud_ref_no' />
+          <property name='sort' value='#{previousCase.stud_ref_no}' />
+          <facet name='header'>
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+              <property name='id' value='htmlOutputText2' />
+              <property name='value' value='Student Reference' />
+            </control>
+          </facet>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='id' value='htmlOutputText3' />
+            <property name='value' value='#{previousCase.stud_ref_no}' />
+          </control>
+        </control>
+        <control component-type='javax.faces.Column' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+          <property name='label' value='Date_entered' />
+          <property name='sort' value='#{previousCase.date_entered}' />
+          <facet name='header'>
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+              <property name='id' value='htmlOutputText' />
+              <property name='value' value='Date Entered' />
+            </control>
+          </facet>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <converter converter-id='javax.faces.DateTime'>
+              <property name='pattern' value='#{user.profile[&quot;user.default.date.format&quot;]}' />
+              <property name='type' value='both' />
+            </converter>
+            <property name='id' value='htmlOutputText1' />
+            <property name='value' value='#{previousCase.date_entered}' />
+          </control>
+        </control>
+      </control>
+    </control>
+    <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <property name='id' value='errorBlockPanel' />
+      <control component-type='com.webmethods.caf.faces.output.Script' renderer-type='com.webmethods.caf.faces.output.Script'>
+        <property name='id' value='getPreviousCasesErrorScript' />
+        <property name='rendered' value='#{PreviousCasesDefaultviewView.getPreviousCases.result.error_boolean==&apos;true&apos;}' />
+        <property name='value' value='#{PreviousCasesDefaultviewView.getPreviousCases.result.error_text}' />
+      </control>
+    </control>
+  </control>
+</view>

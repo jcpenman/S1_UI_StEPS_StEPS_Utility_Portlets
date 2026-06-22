@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view>
+  <property name='pageManagedBean' value='RoleMembershipDefaultviewView' />
+  <property name='preferencesBean' value='RoleMembership' />
+  <design-time-attribute name='portlet' value='RoleMembership' />
+  <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+  </control>
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='roleMembershipForm' />
+    <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertyGroup'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <property name='id' value='propertyGroup' />
+      <property name='label' value='#{facesContext.externalContext.userPrincipal.name}' />
+      <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertySubGroup'>
+        <property name='id' value='propertySubGroup' />
+        <property name='label' value='#{RoleMembershipDefaultviewView.username}' />
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='label' value='Email Address' />
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='value' value='#{RoleMembershipDefaultviewView.emailAddress}' />
+          </control>
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertySubGroup'>
+        <property name='id' value='propertySubGroup1' />
+        <property name='label' value='Roles' />
+        <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+          <property name='id' value='staticRow' />
+          <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+            <property name='id' value='staticCell' />
+            <control component-type='com.webmethods.caf.faces.table.AsyncTable' renderer-type='com.webmethods.caf.faces.table.AsyncTable'>
+              <property name='footerClass' value='portlet-section-footer' />
+              <property name='frame' value='vsides' />
+              <property name='headerClass' value='portlet-section-subheader' />
+              <property name='id' value='asyncTable' />
+              <property name='rowClasses' value='portlet-section-body,portlet-section-alternate' />
+              <property name='rows' value='10' />
+              <property name='selectedRowClass' value='portlet-section-selected' />
+              <property name='value' value='#{RoleMembershipDefaultviewView.userRoleMembershipProvider}' />
+              <property name='var' value='userRoleMembership' />
+              <property name='width' value='100%' />
+              <facet name='footer'>
+                <control component-type='com.webmethods.caf.faces.table.PrevNext' renderer-type='com.webmethods.caf.faces.table.PrevNext'>
+                  <property name='id' value='prevNext' />
+                  <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+                    <property name='id' value='blockPanel' />
+                    <property name='style' value='text-align:center;' />
+                    <control component-type='com.webmethods.caf.faces.table.DataTotal' renderer-type='com.webmethods.caf.faces.table.DataTotal'>
+                      <property name='id' value='dataTotal' />
+                    </control>
+                  </control>
+                </control>
+              </facet>
+              <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+                <property name='id' value='htmlTableColumn' />
+                <property name='label' value='User Role Membership' />
+                <property name='sort' value='#{userRoleMembership}' />
+                <facet name='header'>
+                  <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+                    <property name='id' value='htmlOutputText1' />
+                    <property name='value' value='Roles' />
+                  </control>
+                </facet>
+                <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+                  <property name='id' value='htmlOutputText' />
+                  <property name='value' value='#{userRoleMembership}' />
+                </control>
+              </control>
+            </control>
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+          <property name='id' value='staticRow2' />
+          <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+            <property name='id' value='staticCell3' />
+            <control component-type='com.webmethods.caf.faces.table.AsyncTable' renderer-type='com.webmethods.caf.faces.table.AsyncTable'>
+              <property name='footerClass' value='portlet-section-footer' />
+              <property name='headerClass' value='portlet-section-subheader' />
+              <property name='id' value='asyncTable1' />
+              <property name='rowClasses' value='portlet-section-body,portlet-section-alternate' />
+              <property name='rows' value='10' />
+              <property name='selectedRowClass' value='portlet-section-selected' />
+              <property name='value' value='#{RoleMembershipDefaultviewView.roleWorkQueuesProvider}' />
+              <property name='var' value='roleWorkQueue' />
+              <property name='width' value='100%' />
+              <facet name='footer'>
+                <control component-type='com.webmethods.caf.faces.table.PrevNext' renderer-type='com.webmethods.caf.faces.table.PrevNext'>
+                  <property name='id' value='prevNext' />
+                  <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+                    <property name='id' value='blockPanel' />
+                    <property name='style' value='text-align:center;' />
+                    <control component-type='com.webmethods.caf.faces.table.DataTotal' renderer-type='com.webmethods.caf.faces.table.DataTotal'>
+                      <property name='id' value='dataTotal' />
+                    </control>
+                  </control>
+                </control>
+              </facet>
+              <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+                <property name='id' value='htmlTableColumn' />
+                <property name='label' value='Role Work Queue' />
+                <property name='sort' value='#{roleWorkQueue}' />
+                <facet name='header'>
+                  <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+                    <property name='id' value='htmlOutputText1' />
+                    <property name='value' value='Role Work Queues' />
+                  </control>
+                </facet>
+                <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+                  <property name='id' value='htmlOutputText' />
+                  <property name='value' value='#{roleWorkQueue}' />
+                </control>
+              </control>
+            </control>
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+          <property name='id' value='staticRow1' />
+          <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+            <property name='id' value='staticCell2' />
+            <control component-type='com.webmethods.caf.faces.table.AsyncTable' renderer-type='com.webmethods.caf.faces.table.AsyncTable'>
+              <property name='footerClass' value='portlet-section-footer' />
+              <property name='headerClass' value='portlet-section-subheader' />
+              <property name='rowClasses' value='portlet-section-body,portlet-section-alternate' />
+              <property name='rows' value='10' />
+              <property name='selectedRowClass' value='portlet-section-selected' />
+              <property name='value' value='#{RoleMembershipDefaultviewView.otherRolesProvider}' />
+              <property name='var' value='otherRole' />
+              <property name='width' value='100%' />
+              <facet name='footer'>
+                <control component-type='com.webmethods.caf.faces.table.PrevNext' renderer-type='com.webmethods.caf.faces.table.PrevNext'>
+                  <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+                    <property name='style' value='text-align:center;' />
+                    <control component-type='com.webmethods.caf.faces.table.DataTotal' renderer-type='com.webmethods.caf.faces.table.DataTotal'>
+                    </control>
+                  </control>
+                </control>
+              </facet>
+              <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+                <property name='label' value='Other Role' />
+                <property name='sort' value='#{otherRole}' />
+                <facet name='header'>
+                  <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+                    <property name='value' value='Other Roles' />
+                  </control>
+                </facet>
+                <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+                  <property name='value' value='#{otherRole}' />
+                </control>
+              </control>
+            </control>
+          </control>
+        </control>
+      </control>
+    </control>
+  </control>
+</view>

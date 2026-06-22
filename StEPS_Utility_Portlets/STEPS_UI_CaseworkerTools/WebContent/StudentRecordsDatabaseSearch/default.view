@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view>
+  <property name='pageManagedBean' value='StudentRecordsDatabaseSearchDefaultviewView' />
+  <property name='preferencesBean' value='StudentRecordsDatabaseSearch' />
+  <design-time-attribute name='portlet' value='StudentRecordsDatabaseSearch' />
+  <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+  </control>
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_none' />
+    <property name='id' value='studRecordsDBSearchForm' />
+    <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertyGroup'>
+      <design-time-attribute name='rolledUp' value='false' />
+      <property name='id' value='searchPropertyGroup' />
+      <property name='label' value='Search for student' />
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='studRefNoPropertyLine' />
+        <property name='label' value='Student Reference Number' />
+        <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+          <validator validator-id='com.webmethods.caf.faces.validator.RegExp'>
+            <property name='customErrorMsg' value='You must enter a numeric number' />
+            <property name='pattern' value='^\d+$' />
+            <property name='showCAFErrorMsg' value='false' />
+          </validator>
+          <property name='id' value='htmlInputText' />
+          <property name='maxlength' value='8' />
+          <property name='value' value='#{StudentRecordsDatabaseSearchDefaultviewView.studRefNo}' />
+          <property name='width' value='input8' />
+        </control>
+        <control component-type='com.webmethods.caf.faces.command.async.Button' renderer-type='com.webmethods.caf.faces.command.async.Button'>
+          <property name='action' value='#{StudentRecordsDatabaseSearchDefaultviewView.searchForStudentRecords}' />
+          <property name='id' value='searchButton' />
+          <property name='refresh' value='studRecordsDBSearchForm:searchPropertyGroup' />
+          <property name='value' value='Search' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='databasePropertyLine' />
+        <property name='label' value='Latest Records are in' />
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <property name='id' value='htmlOutputText' />
+          <property name='value' value='#{StudentRecordsDatabaseSearchDefaultviewView.database}' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='errorPropertyLine' />
+        <property name='label' value='Error' />
+        <property name='rendered' value='#{StudentRecordsDatabaseSearchDefaultviewView.getStudentSessions.result.error_boolean==&apos;true&apos;}' />
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <property name='id' value='errorOutputText' />
+          <property name='value' value='#{StudentRecordsDatabaseSearchDefaultviewView.getStudentSessions.result.error_text}' />
+        </control>
+      </control>
+    </control>
+  </control>
+</view>

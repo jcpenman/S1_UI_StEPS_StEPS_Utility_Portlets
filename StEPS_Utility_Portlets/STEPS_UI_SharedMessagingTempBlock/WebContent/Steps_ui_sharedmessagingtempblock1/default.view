@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view>
+  <property name='pageManagedBean' value='Steps_ui_sharedmessagingtempblock1defaultviewview' />
+  <property name='preferencesBean' value='Steps_ui_sharedmessagingtempblock1' />
+  <design-time-attribute name='portlet' value='STEPS_UI_SharedMessagingTempBlock1' />
+  <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+  </control>
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='sharedMessagingTBForm' />
+    <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+      <property name='id' value='messagingBlockPanel' />
+      <control component-type='com.webmethods.caf.faces.output.Script' renderer-type='com.webmethods.caf.faces.output.Script'>
+        <property name='id' value='script' />
+        <property name='value' value='#{Steps_ui_sharedmessagingtempblock1defaultviewview.modalWindowJavaScriptCode}' />
+      </control>
+    </control>
+  </control>
+</view>

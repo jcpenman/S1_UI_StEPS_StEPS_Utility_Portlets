@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view>
+  <property name='pageManagedBean' value='TestPortletOneDefaultviewView' />
+  <property name='preferencesBean' value='TestPortletOne' />
+  <design-time-attribute name='portlet' value='TestPortletOne' />
+  <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+  </control>
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='testPortletOneForm' />
+    <control component-type='com.webmethods.caf.faces.output.Script' renderer-type='com.webmethods.caf.faces.output.Script'>
+      <property name='id' value='script' />
+      <property name='value' value='sharedMessaging=function(a,b,c){&#13;&#10;&#9;&#9;CAF.model(&apos;#{activePageBean.clientIds[&apos;hiddenClientSideErrorTitle&apos;]}&apos;).setValue(a);&#13;&#10;&#9;&#9;CAF.model(&apos;#{activePageBean.clientIds[&apos;hiddenClientSideErrorStyle&apos;]}&apos;).setValue(b);&#13;&#10;&#9;&#9;CAF.model(&apos;#{activePageBean.clientIds[&apos;hiddenClientSideErrorMessage&apos;]}&apos;).setValue(c);&#13;&#10;&#9;&#9;CAF.model(&apos;#{activePageBean.clientIds[&apos;clientSideMessageHiddenCmd&apos;]}&apos;).raise();&#13;&#10;}&#13;&#10;&#13;&#10;' />
+    </control>
+    <control component-type='com.webmethods.caf.faces.command.async.Hidden' renderer-type='com.webmethods.caf.faces.command.async.Hidden'>
+      <property name='action' value='#{TestPortletOneDefaultviewView.createClientSideError}' />
+      <property name='id' value='clientSideMessageHiddenCmd' />
+      <property name='refresh' value='testPortletOneForm:clientSideErrorBlockPanel' />
+    </control>
+    <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+      <property name='id' value='clientSideErrorBlockPanel' />
+      <control component-type='javax.faces.HtmlInputHidden' renderer-type='javax.faces.Hidden'>
+        <property name='id' value='hiddenClientSideErrorTitle' />
+        <property name='value' value='#{TestPortletOneDefaultviewView.clientSideError.title}' />
+      </control>
+      <control component-type='javax.faces.HtmlInputHidden' renderer-type='javax.faces.Hidden'>
+        <property name='id' value='hiddenClientSideErrorStyle' />
+        <property name='value' value='#{TestPortletOneDefaultviewView.clientSideError.style}' />
+      </control>
+      <control component-type='javax.faces.HtmlInputHidden' renderer-type='javax.faces.Hidden'>
+        <property name='id' value='hiddenClientSideErrorMessage' />
+        <property name='value' value='#{TestPortletOneDefaultviewView.clientSideError.message}' />
+      </control>
+      <control component-type='com.webmethods.caf.faces.output.Script' renderer-type='com.webmethods.caf.faces.output.Script'>
+        <property name='id' value='sharedMessageTagScript' />
+        <property name='value' value='#{TestPortletOneDefaultviewView.createErrorTag.result.sharedMessage}' />
+      </control>
+    </control>
+    <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+      <property name='id' value='errorBlockPanel' />
+      <control component-type='com.webmethods.caf.faces.output.Script' renderer-type='com.webmethods.caf.faces.output.Script'>
+        <property name='id' value='asyncErrorScript' />
+        <property name='rendered' value='#{TestPortletOneDefaultviewView.asyncError.error_boolean==&apos;true&apos;}' />
+        <property name='value' value='#{TestPortletOneDefaultviewView.asyncError.error_text}' />
+      </control>
+      <control component-type='com.webmethods.caf.faces.output.Script' renderer-type='com.webmethods.caf.faces.output.Script'>
+        <property name='id' value='syncErrorScript' />
+        <property name='rendered' value='#{TestPortletOneDefaultviewView.syncError.error_boolean==&apos;true&apos;}' />
+        <property name='value' value='#{TestPortletOneDefaultviewView.syncError.error_text}' />
+      </control>
+    </control>
+    <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertyGroup'>
+      <property name='id' value='propertyGroup' />
+      <property name='label' value='Simulate Error' />
+      <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertySubGroup'>
+        <property name='id' value='propertySubGroup' />
+        <property name='label' value='Async' />
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='id' value='propertyLine1' />
+          <property name='label' value='Number of errors to throw' />
+          <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+            <validator validator-id='com.webmethods.caf.faces.validator.RegExp'>
+              <property name='customErrorMsg' value='Thsi field must be numeric' />
+              <property name='pattern' value='^\d+$' />
+              <property name='showCAFErrorMsg' value='false' />
+            </validator>
+            <property name='id' value='numberAsyncErrors' />
+            <property name='value' value='#{TestPortletOneDefaultviewView.errorQuantities.async}' />
+            <property name='width' value='input4' />
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='id' value='propertyLine' />
+          <control component-type='com.webmethods.caf.faces.command.async.Button' renderer-type='com.webmethods.caf.faces.command.async.Button'>
+            <property name='action' value='#{TestPortletOneDefaultviewView.throwAsyncError}' />
+            <property name='id' value='throwAsyncErrorButton' />
+            <property name='onblur' value=' ' />
+            <property name='onclick' value=' ' />
+            <property name='ondblclick' value=' ' />
+            <property name='onfocus' value=' ' />
+            <property name='onkeydown' value=' ' />
+            <property name='onkeypress' value=' ' />
+            <property name='onkeyup' value=' ' />
+            <property name='onmousedown' value=' ' />
+            <property name='onmousemove' value=' ' />
+            <property name='onmouseout' value=' ' />
+            <property name='onmouseover' value=' ' />
+            <property name='onmouseup' value=' ' />
+            <property name='value' value='Throw Error' />
+          </control>
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertySubGroup'>
+        <property name='id' value='propertySubGroup1' />
+        <property name='label' value='Sync' />
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='id' value='propertyLine3' />
+          <property name='label' value='Number of errors to throw' />
+          <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+            <validator validator-id='com.webmethods.caf.faces.validator.RegExp'>
+              <property name='customErrorMsg' value='Thsi field must be numeric' />
+              <property name='pattern' value='^\d+$' />
+              <property name='showCAFErrorMsg' value='false' />
+            </validator>
+            <property name='id' value='numberSyncErrors' />
+            <property name='value' value='#{TestPortletOneDefaultviewView.errorQuantities.sync}' />
+            <property name='width' value='input4' />
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='id' value='propertyLine2' />
+          <control component-type='javax.faces.HtmlCommandButton' renderer-type='javax.faces.Button'>
+            <property name='action' value='#{TestPortletOneDefaultviewView.throwSyncError}' />
+            <property name='id' value='throwSyncErrorButton' />
+            <property name='onblur' value=' ' />
+            <property name='onclick' value=' ' />
+            <property name='ondblclick' value=' ' />
+            <property name='onfocus' value=' ' />
+            <property name='onkeydown' value=' ' />
+            <property name='onkeypress' value=' ' />
+            <property name='onkeyup' value=' ' />
+            <property name='onmousedown' value=' ' />
+            <property name='onmousemove' value=' ' />
+            <property name='onmouseout' value=' ' />
+            <property name='onmouseover' value=' ' />
+            <property name='onmouseup' value=' ' />
+            <property name='value' value='Throw Error' />
+          </control>
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertySubGroup'>
+        <property name='id' value='propertySubGroup2' />
+        <property name='label' value='Client Side' />
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='id' value='propertyLine4' />
+          <control component-type='com.webmethods.caf.faces.output.HtmlButton' renderer-type='javax.faces.Button'>
+            <property name='id' value='throwClientSideErrorButton' />
+            <property name='label' value='Throw Error' />
+            <property name='onblur' value=' ' />
+            <property name='onclick' value='window.sharedMessaging(&quot;Test Portlet One&quot;, &quot;error&quot;, &quot;Client Side Error &quot;);' />
+            <property name='ondblclick' value=' ' />
+            <property name='onfocus' value=' ' />
+            <property name='onkeydown' value=' ' />
+            <property name='onkeypress' value=' ' />
+            <property name='onkeyup' value=' ' />
+            <property name='onmousedown' value=' ' />
+            <property name='onmousemove' value=' ' />
+            <property name='onmouseout' value=' ' />
+            <property name='onmouseover' value=' ' />
+            <property name='onmouseup' value=' ' />
+          </control>
+        </control>
+      </control>
+    </control>
+  </control>
+</view>

@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view>
+  <property name='pageManagedBean' value='ShowTeamDefaultviewView' />
+  <property name='preferencesBean' value='ShowTeam' />
+  <design-time-attribute name='portlet' value='ShowTeam' />
+  <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+  </control>
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <design-time-attribute name='rolledUp' value='true' />
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='showTeamForm' />
+    <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertyGroup'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <property name='id' value='propertyGroup' />
+      <property name='label' value='Team Membership' />
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='propertyLine' />
+        <property name='label' value='Team' />
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <property name='value' value='#{ShowTeamDefaultviewView.getTeam.result.team_out}' />
+        </control>
+      </control>
+    </control>
+    <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <property name='id' value='errorBlockPanel' />
+      <control component-type='com.webmethods.caf.faces.output.Script' renderer-type='com.webmethods.caf.faces.output.Script'>
+        <property name='id' value='getTeamErrorScript' />
+        <property name='rendered' value='#{ShowTeamDefaultviewView.getTeam.result.error_boolean==&apos;true&apos;}' />
+        <property name='value' value='#{ShowTeamDefaultviewView.getTeam.result.error_text}' />
+      </control>
+    </control>
+  </control>
+</view>

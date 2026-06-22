@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view>
+  <property name='pageManagedBean' value='AllEmployeesDefaultviewView' />
+  <property name='preferencesBean' value='AllEmployees' />
+  <design-time-attribute name='portlet' value='AllEmployees' />
+  <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+  </control>
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='allEmployeesForm' />
+    <control component-type='com.webmethods.caf.faces.table.AsyncTable' renderer-type='com.webmethods.caf.faces.table.AsyncTable'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <property name='footerClass' value='portlet-section-footer' />
+      <property name='headerClass' value='portlet-section-subheader' />
+      <property name='rowClasses' value='portlet-section-body,portlet-section-alternate' />
+      <property name='rows' value='10' />
+      <property name='selectedRowClass' value='portlet-section-selected' />
+      <property name='value' value='#{AllEmployeesDefaultviewView.userDetailsProvider}' />
+      <property name='var' value='userDetail' />
+      <property name='width' value='100%' />
+      <facet name='header'>
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <property name='value' value='Users' />
+        </control>
+      </facet>
+      <facet name='footer'>
+        <control component-type='com.webmethods.caf.faces.table.PrevNext' renderer-type='com.webmethods.caf.faces.table.PrevNext'>
+          <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+            <property name='style' value='text-align:center;' />
+            <control component-type='com.webmethods.caf.faces.table.DataTotal' renderer-type='com.webmethods.caf.faces.table.DataTotal'>
+            </control>
+          </control>
+        </control>
+      </facet>
+      <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='label' value='USERNAME' />
+        <property name='sort' value='#{userDetail.USERNAME}' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='value' value='USERNAME' />
+          </control>
+        </facet>
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <property name='value' value='#{userDetail.USERNAME}' />
+        </control>
+      </control>
+      <control component-type='javax.faces.Column' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='label' value='FORENAME' />
+        <property name='sort' value='#{userDetail.FORENAME}' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='id' value='htmlOutputText4' />
+            <property name='value' value='FORENAME' />
+          </control>
+        </facet>
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <property name='id' value='htmlOutputText5' />
+          <property name='value' value='#{userDetail.FORENAME}' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='label' value='SURNAME' />
+        <property name='sort' value='#{userDetail.SURNAME}' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='value' value='SURNAME' />
+          </control>
+        </facet>
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <property name='value' value='#{userDetail.SURNAME}' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='label' value='TEAM' />
+        <property name='sort' value='#{userDetail.TEAM}' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='value' value='TEAM' />
+          </control>
+        </facet>
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <property name='value' value='#{userDetail.TEAM}' />
+        </control>
+      </control>
+      <control component-type='javax.faces.Column' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='label' value='LAST_UPDATED_BY' />
+        <property name='sort' value='#{userDetail.LAST_UPDATED_BY}' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='id' value='htmlOutputText2' />
+            <property name='value' value='LAST_UPDATED_BY' />
+          </control>
+        </facet>
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <property name='id' value='htmlOutputText3' />
+          <property name='value' value='#{userDetail.LAST_UPDATED_BY}' />
+        </control>
+      </control>
+      <control component-type='javax.faces.Column' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='label' value='LAST_UPDATED_ON' />
+        <property name='sort' value='#{userDetail.LAST_UPDATED_ON}' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='id' value='htmlOutputText' />
+            <property name='value' value='LAST_UPDATED_ON' />
+          </control>
+        </facet>
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <converter converter-id='javax.faces.DateTime'>
+            <property name='pattern' value='#{user.profile[&quot;user.default.date.format&quot;]}' />
+          </converter>
+          <property name='id' value='htmlOutputText1' />
+          <property name='value' value='#{userDetail.LAST_UPDATED_ON}' />
+        </control>
+      </control>
+    </control>
+  </control>
+</view>

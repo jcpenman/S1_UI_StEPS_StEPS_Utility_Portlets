@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wm-portlet-app version="1.0">
+	<wm-portlet>
+		<portlet-name>BooleanSetter</portlet-name>
+		<portlet-preferences>
+			<preference>
+				<name>True</name>
+				<display-name></display-name>
+				<description></description>
+				<scope>content</scope>
+				<property-editor type="text"></property-editor>
+				<hidden>false</hidden>
+				<required>false</required>
+				<type>Boolean</type>
+			</preference>
+			<preference>
+				<name>False</name>
+				<display-name></display-name>
+				<description></description>
+				<scope>content</scope>
+				<property-editor type="text"></property-editor>
+				<hidden>false</hidden>
+				<required>false</required>
+				<type>Boolean</type>
+			</preference>
+		</portlet-preferences>
+	</wm-portlet>
+
+	<wm-portlet>
+		<portlet-name>ShowDebug</portlet-name>
+		<portlet-preferences>
+			<preference>
+				<name>showDebug</name>
+				<display-name>Show Debug</display-name>
+				<description></description>
+				<scope>content</scope>
+				<property-editor type="text"></property-editor>
+				<hidden>false</hidden>
+				<required>false</required>
+				<type>String</type>
+			</preference>
+		</portlet-preferences>
+	</wm-portlet>
+
+
+	<wm-portlet>
+		<portlet-name>LogoutCountDownTimerLimit</portlet-name>
+		<portlet-preferences>
+			<preference>
+				<name>inactivityTime</name>
+				<display-name>Inactivity time</display-name>
+				<description></description>
+				<scope>content</scope>
+				<property-editor type="text"></property-editor>
+				<hidden>false</hidden>
+				<required>false</required>
+				<type>String</type>
+			</preference>
+		</portlet-preferences>
+	</wm-portlet>
+	<wm-portlet>
+		<portlet-name>NoContextMenu</portlet-name>
+	</wm-portlet>
+	<wm-portlet>
+		<portlet-name>UtilityBatchRecalc</portlet-name>
+		<category>STEPS_UI_Utilities</category>
+	</wm-portlet>
+	<wm-portlet>
+		<portlet-name>UtilityFeeStatusReport2012All</portlet-name>
+		<category>STEPS_UI_Utilities</category>
+	</wm-portlet>
+	<wm-portlet>
+		<portlet-name>UtilityFeeStatusReport2012Institution</portlet-name>
+		<category>STEPS_UI_Utilities</category>
+	</wm-portlet>
+	<wm-portlet>
+		<portlet-name>UtilityDSAReminders</portlet-name>
+		<category>STEPS_UI_Utilities</category>
+	</wm-portlet></wm-portlet-app>
+
